@@ -50,7 +50,7 @@ module.exports.createSession = async function (req, res) {
       });
     }
     return res.status(200).json({
-      message: 'loged in successfully',
+      message: 'logged in successfully',
       data: {
         token: jwt.sign(doc.toJSON(), 'idontknow', { expiresIn: '2000000' }),
       },

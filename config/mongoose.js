@@ -1,7 +1,17 @@
 const mongoose = require('mongoose');
+var dotenv = require('dotenv');
 
-mongoose.set('strictQuery', false);
-mongoose.connect('mongodb://localhost/HospitalAPI');
+dotenv.config();
+
+mongoose.set('strictQuery', true);
+
+mongoose.connect(
+  process.env.MONGOLAB_URI,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  } /*|| 'mongodb://localhost/HospitalAPI'*/
+);
 
 const db = mongoose.connection;
 

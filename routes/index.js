@@ -6,6 +6,6 @@ const homeController = require('../controllers/home');
 
 router.use('/doctors', require('./doctors'));
 router.use('/patients', require('./patients'));
-router.use('./report', require('./reports'));
+router.use('./reports', require('./reports'));
 
 module.exports = router;

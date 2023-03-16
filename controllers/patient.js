@@ -1,19 +1,20 @@
 const Patient = require('../models/patient');
-// const Report = require('../models/report');
+const Report = require('../models/report');
 
 //Creating new report
 
 module.exports.register = async function (req, res) {
   try {
-    let patient = await Patient.findOne({ phoneno: req.body.phoneno });
+    let patient = await Patient.findOne({ name: req.body.name });
     if (!patient) {
       let newPatient = await Patient.create(
-        // {
-        // name: req.body.name,
-        // phoneNumber: req.body.phoneNumber,
-
-        // }
-        req.body
+        {
+          name: req.body.name,
+          phoneNumber: req.body.phoneNumber,
+          age: req.body.age,
+          gender: req.body.gender,
+        }
+        // req.body
       );
       return res.status(201).json({
         message: 'Patient registered sucessfully',

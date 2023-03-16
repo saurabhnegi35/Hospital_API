@@ -7,7 +7,7 @@ const patientSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
-    phoneno: {
+    phoneNumber: {
       type: String,
       required: true,
       unique: true,
